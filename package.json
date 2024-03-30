@@ -11,7 +11,11 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-feather": "^2.0.10",
+    "react-hot-toast": "^2.4.1",
+    "react-router-dom": "^6.22.3",
+    "tailwind-merge": "^2.2.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.66",

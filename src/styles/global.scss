@@ -49,6 +49,11 @@ a {
   }
 }
 
+:root {
+  --var-primary: #328ddc;
+  --var-white: #fff;
+}
+
 .main-app {
   background-color: #fafafa;
   min-height: 100vh;
