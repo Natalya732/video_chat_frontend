@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Button from "@/Components/Button/Button";
+import Home from "./Pages/Home";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<h1 className="text-center text-5xl">Home page here</h1>}
+            element={<Home/>}
           />
           <Route
             path="/*"
