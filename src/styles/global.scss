@@ -62,7 +62,8 @@ a {
 }
 .home {
   color: white;
-  padding: 20px;
+  width: 100%;
+  height: 100%;
   nav{
     display: flex;
     justify-content: space-between;
@@ -71,7 +72,7 @@ a {
       gap: 12px;
       li a {
         display: block;
-        color: white;
+        color: rgb(63, 92, 72);
         text-align: center;
         padding: 10px 16px;
         text-decoration: none;
@@ -107,11 +108,46 @@ a {
       img{
         height: 40px;
         width: 40px;
+        color: rgb(63, 92, 72);
       }
     }
   }
   .container{
-    float: right;
-    margin-top: 120px;
+  position: fixed;
+  width: fit-content;
+  top: 50%;
+  margin-left: 30px;
+  transform: translateY(-50%);
+  p{
+    color: hsl(107, 13%, 27%);
+    letter-spacing: 9px;
+  }
+  h1 {
+    color: hsl(107, 13%, 27%);
+    font-size: 70px;
+    font-weight: bold;
+    font-family: monospace;
+    letter-spacing: 7px;
+    cursor: pointer;
+  }
+  
+  h1 span {
+    transition: 0.5s ease-out;
+  }
+  h1:hover span:nth-child(1) {
+    margin-right: 2px;
+  }
+  h1:hover span:nth-child(2):after {
+    content: " :)";
+  }
+  h1:hover span:nth-child(2) {
+    margin-left: 14px;
+  }
+  h1:hover span {
+    color: #b9f346;
+    outline: black;
+    text-shadow: 0 0 10px #dee986, 0 0 10px #a2fc66, 0 0 40px #fff;
+  }
   }
 }
+

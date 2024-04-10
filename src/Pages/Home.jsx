@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../assets/logo.avif";
 export default function Home() {
   return (
-    <div className="home h-full w-full">
+    <div className="home">
       <nav className="navbar">
         <ul>
           <li>
@@ -23,8 +23,11 @@ export default function Home() {
           <span>A-CHAT</span>
         </div>
       </nav>
-      <div className="ml-8">
-        CHAT <span>ANYTrIME</span>
+      <div className="container">
+      <h1>
+      <span>CHAT</span> <span>ANYTIME</span>
+    </h1>
+      <p className="typewriter">Now connect with your loved ones anytime...</p>
       </div>
     </div>
   );
