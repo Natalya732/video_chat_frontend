@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "@/styles/variables";
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -49,6 +51,180 @@ a {
   }
 }
 
+@mixin lightColors() {
+  --var-white: #fefefe;
+  --var-black: #040406;
+  --var-red: #fa3f35;
+  --var-green: #33be2c;
+  --var-yellow: #c4cd24;
+  --var-light-blue: #abd5fe;
+
+  --var-color-heading: #040406;
+  --var-color-title: #040406;
+  --var-color-label: #718096;
+  --var-color-desc: #383b3e;
+  --var-color-button: #fefefe;
+  --var-bg: #fefefe;
+  --var-bg-100: #fafafa;
+  --var-bg-200: #f3f0f3;
+  --var-bg-300: #bcbcbc;
+
+  --var-text-xxs: 10px;
+  --var-text-xs: 12px;
+  --var-text-sm: 14px;
+  --var-text-md: 16px;
+  --var-text-lg: 18px;
+  --var-text-xl: 24px;
+  --var-text-2xl: 28px;
+  --var-text-3xl: 36px;
+
+  --var-spacing-xxs: 4px;
+  --var-spacing-xs: 8px;
+  --var-spacing-2xs: 12px;
+  --var-spacing-sm: 16px;
+  --var-spacing-md: 24px;
+  --var-spacing-lg: 32px;
+  --var-spacing-xl: 48px;
+
+  --var-shadow-100: 0px 0px 5px rgba(0, 0, 0, 0.15);
+  --var-shadow-200: 1px 1px 4px rgba(0, 0, 0, 0.15);
+
+  --var-primary: #2c8be2;
+  --var-primary-2: #44c0f0;
+
+  color-scheme: light;
+}
+
+@mixin darkColors() {
+  color-scheme: dark;
+
+  --var-color-heading: #fbfbff;
+  --var-color-title: #ececff;
+  --var-color-label: #aab5c6;
+  --var-color-desc: #c3cad3;
+  --var-color-button: #fefefe;
+  --var-bg: #111111;
+  --var-bg-100: #2b2b2b;
+  --var-bg-200: #3c3c3c;
+  --var-bg-300: #4f4f4f;
+
+  --var-shadow-100: 0px 0px 5px rgba(255, 255, 255, 0.15);
+  --var-shadow-200: 1px 1px 4px rgba(255, 255, 255, 0.2);
+
+  --var-primary: #2c8be2;
+  --var-primary-2: #44c0f0;
+}
+
+:root {
+  @include lightColors();
+
+  &:has(.app-theme-dark) {
+    @include darkColors();
+  }
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+div {
+  color: $color-title;
+}
+
+.app-theme-dark {
+  @include darkColors();
+}
+
+.main-app {
+  background-color: #fafafa;
+  min-height: 100vh;
+  height: fit-content;
+  width: 100%;
+  height: 100%;
+}
+
+.heading {
+  font-size: $text-xl;
+  font-weight: 600;
+  line-height: 1.25;
+  color: $color-heading;
+}
+
+.heading-big {
+  font-size: $text-2xl;
+  font-weight: 600;
+  line-height: 1.2;
+  color: $color-heading;
+}
+
+.title {
+  font-size: $text-lg;
+  line-height: 1.25;
+  font-weight: 600;
+  color: $color-title;
+}
+
+.text-box {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.label {
+  font-size: $text-md;
+  line-height: 1.25;
+  color: $color-label;
+}
+
+.text {
+  font-size: $text-md;
+  line-height: 1.25;
+  color: $color-title;
+}
+
+.desc {
+  font-size: $text-sm;
+  line-height: 1.3;
+  color: $color-desc;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  padding: $spacing-md;
+}
+
+@media (max-width: $breakpoint-md) {
+  .page-container {
+    gap: $spacing-sm;
+    padding: $spacing-sm;
+  }
+
+  .heading {
+    font-size: $text-xl;
+  }
+
+  .heading-big {
+    font-size: $text-xl;
+  }
+
+  .label {
+    font-size: $text-sm;
+  }
+
+  .title {
+    font-size: $text-md;
+  }
+
+  .text {
+    font-size: $text-sm;
+  }
+}
+
 .main-app {
   background-image: linear-gradient(
     179deg,
@@ -60,11 +236,12 @@ a {
   width: 100%;
   height: 100%;
 }
+
 .home {
   color: white;
   width: 100%;
   height: 100%;
-  nav{
+  nav {
     display: flex;
     justify-content: space-between;
     ul {
@@ -77,12 +254,12 @@ a {
         padding: 10px 16px;
         text-decoration: none;
         cursor: pointer;
-        position: relative; 
-        &:hover{
-             color: rgb(31, 174, 62);
+        position: relative;
+        &:hover {
+          color: rgb(31, 174, 62);
         }
         &:before {
-          content: '';
+          content: "";
           position: absolute;
           top: 100%;
           left: 0;
@@ -94,60 +271,59 @@ a {
           transition: transform 0.3s ease;
         }
         &:hover:before {
-          transform: scaleX(1); 
+          transform: scaleX(1);
           transform-origin: bottom left;
         }
       }
     }
-    .logo{
+    .logo {
       display: block;
       align-items: center;
-      span{
+      span {
         font-size: small;
       }
-      img{
+      img {
         height: 40px;
         width: 40px;
         color: rgb(63, 92, 72);
       }
     }
   }
-  .container{
-  position: fixed;
-  width: fit-content;
-  top: 50%;
-  margin-left: 30px;
-  transform: translateY(-50%);
-  p{
-    color: hsl(107, 13%, 27%);
-    letter-spacing: 9px;
-  }
-  h1 {
-    color: hsl(107, 13%, 27%);
-    font-size: 70px;
-    font-weight: bold;
-    font-family: monospace;
-    letter-spacing: 7px;
-    cursor: pointer;
-  }
-  
-  h1 span {
-    transition: 0.5s ease-out;
-  }
-  h1:hover span:nth-child(1) {
-    margin-right: 2px;
-  }
-  h1:hover span:nth-child(2):after {
-    content: " :)";
-  }
-  h1:hover span:nth-child(2) {
-    margin-left: 14px;
-  }
-  h1:hover span {
-    color: #b9f346;
-    outline: black;
-    text-shadow: 0 0 10px #dee986, 0 0 10px #a2fc66, 0 0 40px #fff;
-  }
+  .container {
+    position: fixed;
+    width: fit-content;
+    top: 50%;
+    margin-left: 30px;
+    transform: translateY(-50%);
+    p {
+      color: hsl(107, 13%, 27%);
+      letter-spacing: 9px;
+    }
+    h1 {
+      color: hsl(107, 13%, 27%);
+      font-size: 70px;
+      font-weight: bold;
+      font-family: monospace;
+      letter-spacing: 7px;
+      cursor: pointer;
+    }
+
+    h1 span {
+      transition: 0.5s ease-out;
+    }
+    h1:hover span:nth-child(1) {
+      margin-right: 2px;
+    }
+    h1:hover span:nth-child(2):after {
+      content: " :)";
+    }
+    h1:hover span:nth-child(2) {
+      margin-left: 14px;
+    }
+    h1:hover span {
+      color: #b9f346;
+      outline: black;
+      text-shadow: 0 0 10px #dee986, 0 0 10px #a2fc66, 0 0 40px #fff;
+    }
   }
 }
-

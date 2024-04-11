@@ -10,7 +10,37 @@ export default {
   theme: {
     extend: {
       colors: {
+        "color-heading": "var(--var-color-heading)",
+        "color-title": "var(--var-color-title)",
+        "color-label": "var(--var-color-label)",
+        "color-desc": "var(--var-color-desc)",
+        "color-button": "var(--var-color-button)",
+        bg: "var(--var-bg)",
+        "bg-100": "var(--var-bg-100)",
+        "bg-200": "var(--var-bg-200)",
+        "bg-300": "var(--var-bg-300);",
+
+        "text-xxs": "var(--var-text-xxs)",
+        "text-xs": "var(--var-text-xs)",
+        "text-sm": "var(--var-text-sm)",
+        "text-md": "var(--var-text-md)",
+        "text-lg": "var(--var-text-lg)",
+        "text-xl": "var(--var-text-xl)",
+        "text-2xl": "var(--var-text-2xl)",
+        "text-3xl": "var(--var-text-3xl)",
+
+        "spacing-xxs": "var(--var-spacing-xxs)",
+        "spacing-xs": "var(--var-spacing-xs)",
+        "spacing-2xs": "var(--var-spacing-2xs)",
+        "spacing-sm": "var(--var-spacing-sm)",
+        "spacing-md": "var(--var-spacing-md)",
+        "spacing-lg": "var(--var-spacing-lg)",
+        "spacing-xl": "var(--var-spacing-xl)",
+
         primary: "var(--var-primary)",
+        "primary-2": "var(--var-primary-2)",
+        "shadow-100": "var(--var-shadow-100)",
+        "shadow-200": "var(--var-shadow-200)",
       },
     },
   },
