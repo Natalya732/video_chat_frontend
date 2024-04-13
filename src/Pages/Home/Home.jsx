@@ -1,8 +1,12 @@
 import React from "react";
-import logo from "../assets/logo.avif";
+
+import logo from "@/assets/logo.avif";
+
+import styles from "./Home.module.scss";
+
 export default function Home() {
   return (
-    <div className="home">
+    <div className={`home ${styles.container}`}>
       <nav className="navbar">
         <ul>
           <li>
@@ -24,10 +28,12 @@ export default function Home() {
         </div>
       </nav>
       <div className="container">
-      <h1>
-      <span>CHAT</span> <span>ANYTIME</span>
-    </h1>
-      <p className="typewriter">Now connect with your loved ones anytime...</p>
+        <h1>
+          <span>CHAT</span> <span>ANYTIME</span>
+        </h1>
+        <p className="typewriter">
+          Now connect with your loved ones anytime...
+        </p>
       </div>
     </div>
   );
