@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 
-const backendApiUrl = process.env.REACT_APP_BACKEND_URL;
+const backendApiUrl = process.env.VITE_BACKEND_URL;
 
 export const handleNumericInputKeyDown = (event) => {
   let key = event.key;

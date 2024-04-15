@@ -21,7 +21,7 @@ const Button = ({
     red: ` text-white border-red-500 bg-red-500`,
     outline: `border-primary bg-white text-black`,
     cancel: ` bg-slate-100 text-black  border-slate-100`,
-    disabled: ` bg-slate-400 text-black border-slate-400 active:transform-none cursor-not-allowed `,
+    disabled: ` bg-slate-300 text-black border-slate-300 active:transform-none cursor-not-allowed `,
   };
 
   return (
