@@ -9,6 +9,7 @@
   background-color: $bg-100;
 
   .googleButton {
+    position: relative;
     text-align: center;
 
     .actualGoogleButton {
@@ -34,22 +35,69 @@
   .left {
     background-color: $bg-200;
     align-items: center;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
 
     img {
       width: 400px;
       max-width: 100%;
     }
+
+    .ball,
+    .ball2 {
+      left: 0;
+      top: 70%;
+      height: 240px;
+      width: 240px;
+      opacity: 0.9;
+      background-color: #ff77a6;
+      z-index: -1;
+      animation-duration: 10s;
+    }
+
+    .ball2 {
+      background-color: #bcff78;
+      right: 0;
+      left: auto;
+      top: 0%;
+    }
   }
 
   .right {
     .ball {
-      top: 90px;
-      height: 300px;
-      width: 300px;
-      opacity: 0.6;
+      top: 50px;
+      height: 150px;
+      width: 150px;
+      // opacity: 0.4;
+      z-index: -1;
+      animation: none;
+      animation-duration: 10s;
+
+      &:nth-child(1) {
+        left: 30px;
+        top: 30px;
+        background-color: #ff5f97;
+        animation-delay: 3s;
+      }
+
+      &:nth-child(2) {
+        left: 60px;
+        top: 60px;
+        background-color: $primary;
+        animation-delay: 0s;
+      }
+
+      &:nth-child(3) {
+        left: 120px;
+        top: 20px;
+        background-color: $yellow;
+        animation-delay: 6s;
+      }
     }
 
     .box {
+      background-color: $bg;
       width: 360px;
       max-width: 100%;
       display: flex;
@@ -59,6 +107,8 @@
       box-shadow: $shadow-100;
       border-radius: 10px;
       padding: $spacing-md;
+      position: relative;
+      z-index: 5;
     }
   }
 

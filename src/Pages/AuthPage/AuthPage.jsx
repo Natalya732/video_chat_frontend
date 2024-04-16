@@ -98,12 +98,15 @@ function AuthPage() {
     <div className={`${styles.container} blur-`}>
       <div className={styles.left}>
         <img src={authGirl} alt="Login" />
+
+        <div className={`blurry-ball ${styles.ball}`} />
+        <div className={`blurry-ball ${styles.ball2}`} />
       </div>
 
       <div className={styles.right}>
-        <div className={`blurry-ball ${styles.ball}`} />
         <div className={styles.box}>
           <p className="heading-big">Login into app </p>
+          <p className="desc">Quickly get started by logging via google </p>
           {googleLoginButton}
         </div>
       </div>
