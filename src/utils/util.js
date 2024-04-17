@@ -1,6 +1,6 @@
 import toast from "react-hot-toast";
 
-const backendApiUrl = process.env.VITE_BACKEND_URL;
+const backendApiUrl = import.meta.env.VITE_BACKEND_URL;
 
 export const handleNumericInputKeyDown = (event) => {
   let key = event.key;
@@ -82,7 +82,7 @@ export const errorToastLogger = (
 };
 
 export const handleLogout = async () => {
-  localStorage.removeItem("app-token");
+  localStorage.removeItem("v-c-token");
 
   if (!window.location.href.includes("auth")) window.location.replace("/auth");
 };
@@ -104,7 +104,7 @@ export const fetchWrapper = async ({
   };
 
   if (!isPublic) {
-    const token = localStorage.getItem("app-token");
+    const token = localStorage.getItem("v-c-token");
     if (!token) {
       handleLogout();
       toast.error("Not logged in!");

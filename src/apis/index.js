@@ -1,10 +1,10 @@
 import { makeApiCall } from "@/utils/util";
 
-export const getUserDetails = async (uid) => {
-  const path = `/users/${uid}`;
+export const getCurrentUser = async () => {
+  const path = `/user/me`;
 
   return await makeApiCall({
-    functionName: "getUserDetails",
+    functionName: "getCurrentUser",
     defaultErrorMessage: "Failed to get user details",
     fetchWrapperOptions: {
       path,

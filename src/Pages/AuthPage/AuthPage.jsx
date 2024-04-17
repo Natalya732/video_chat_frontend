@@ -48,7 +48,7 @@ function AuthPage() {
     const accessToken = searchParams.get("accessToken");
 
     if (accessToken) {
-      localStorage.setItem("sleeping-token", accessToken);
+      localStorage.setItem("v-c-token", accessToken);
 
       if (fallback && fallback !== "null") window.location.replace(fallback);
       else window.location.replace(query ? `/?${query}` : "/");
@@ -70,7 +70,7 @@ function AuthPage() {
 
   useEffect(() => {
     if (userDetails._id) navigate("/");
-  }, []);
+  }, [userDetails]);
 
   const googleLoginButton = (
     <Button
@@ -100,7 +100,10 @@ function AuthPage() {
         <img src={authGirl} alt="Login" />
 
         <div className={`blurry-ball ${styles.ball}`} />
-        <div className={`blurry-ball ${styles.ball2}`} />
+        <div
+          className={`blurry-ball ${styles.ball2}`}
+          style={{ animationDelay: "6s" }}
+        />
       </div>
 
       <div className={styles.right}>
