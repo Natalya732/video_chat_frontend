@@ -42,10 +42,12 @@
     img {
       width: 400px;
       max-width: 100%;
+      user-select: none;
     }
 
     .ball,
-    .ball2 {
+    .ball2,
+    .ball3 {
       left: 0;
       top: 70%;
       height: 240px;
@@ -55,12 +57,16 @@
       z-index: -1;
       animation-duration: 10s;
     }
-
     .ball2 {
       background-color: #bcff78;
       right: 0;
       left: auto;
       top: 0%;
+    }
+    .ball3 {
+      background-color: #74d6ff;
+      left: 0;
+      top: 0;
     }
   }
 

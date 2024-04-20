@@ -104,6 +104,10 @@ function AuthPage() {
           className={`blurry-ball ${styles.ball2}`}
           style={{ animationDelay: "6s" }}
         />
+        <div
+          className={`blurry-ball ${styles.ball3}`}
+          style={{ animationDelay: "3s" }}
+        />
       </div>
 
       <div className={styles.right}>
