@@ -12,6 +12,7 @@ import AppLayout from "@/Layout/AppLayout/AppLayout";
 import { getCurrentUser } from "./apis";
 import { themeEnum } from "./utils/constants";
 import actionTypes from "./store/actionTypes";
+import ProfilePage from "./Pages/ProfilePage/ProfilePage";
 
 function App() {
   const userDetails = useSelector((state) => state.root.user);
@@ -98,7 +99,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/auth" element={<AuthPage />} />
-
+          <Route path="/profile" element={<ProfilePage/>}/>
           <Route element={<AppLayout />}>
             {/* whole application private routes will be defined below */}
 
